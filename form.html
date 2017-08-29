@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="form_css.css" type="text/css" rel="stylesheet"/>
+<title>Estudando para a prova</title>
+</head>
+
+<body>
+
+<!--    
+	<input type="text">	campo para colocar texto
+
+	<input type="radio">	opções de seleção
+
+	<input type="submit">	botão de enviar o form
+
+	O elemento <fieldset> é usado para agrupar dados relacionados em um formulário.
+
+	O elemento <legend> define uma legenda para o elemento <fieldset>. 
+	
+	Accept-charset Especifica o conjunto de caracteres usado no formulário enviado (padrão: o charset da página).
+	
+	Action Especifica um endereço (url) para onde enviar o formulário (padrão: a página de envio).
+	
+	Autocomplete Especifica se o navegador deve preencher automaticamente o formulário (padrão: ativado).
+	
+	Enctype Especifica a codificação dos dados enviados (padrão: é url-codificado).
+	
+	Método Especifica o método HTTP usado ao enviar o formulário (padrão: GET).
+
+	Name Especifica um nome usado para identificar o formulário (para uso DOM: document.forms.name)
+	(nome dos formularios do documento).
+	
+	Novalidate Especifica que o navegador não deve validar o formulário.
+
+	Target Especifica o destino do endereço no atributo action (padrão: _self).
+	
+	value é usado para o valor do campo, ele fica pré-escrito no campo.
+	----------------------------------------------------------------------------------------
+	
+	Disabled Especifica que um campo de entrada deve ser desativado
+	Max Especifica o valor máximo para um campo de entrada
+	Maxlength Especifica o número máximo de caracteres para um campo de entrada
+	Min Especifica o valor mínimo de um campo de entrada
+	Padrão Especifica uma expressão regular para verificar o valor de entrada
+	Readonly Especifica que um campo de entrada é somente leitura (não pode ser alterado)
+	Required Especifica que um campo de entrada é obrigatório (deve ser preenchido)
+	Size Especifica a largura (em caracteres) de um campo de entrada
+	Step Especifica os intervalos de número legais para um campo de entrada
+	Value Especifica o valor padrão para um campo de entrada	
+	
+	----------------------------------------------------------------------------------------
+	<Form> Define um formulário HTML para entrada do usuário
+	<Input> Define um controle de entrada
+	<Textarea> Define um controle de entrada de várias linhas (área de texto)
+	<Label> Define um rótulo para um elemento <input>
+	<Fieldset> Grupos relacionados elementos em um formulário
+	<Legend> Define uma legenda para um elemento 
+	<Select> Define uma lista drop-down
+	<Optgroup> Define um grupo de opções relacionadas em uma lista suspensa
+	<Option> Define uma opção em uma lista drop-down
+	<Button> Define um botão clicável
+	<output> resultado de um cálculo
+	<datalist> Especifica uma lista pré-definida de opções do campo (lista drop down)
+	-->
+	
+
+<center> <h1> FORMULÁRIO</h1> </center>
+<form action="/action_page.php" autocomplete="on" method="get"> 
+<!--sempre que criar um form, abre e fecha <form> action= ação que vai ser realisada (no caso tem um diretorio de um arquivo php, porque um formulario precisa de php para funcionar) 
+autocomplete= sugeri opções nos campos comforme o que foi digitado anteriormente (em forms da internet)
+-->
+	<fieldset>
+		<legend> Informações Pessoais </legend>	
+		
+		Nome: <br> 
+		<input type="text" title="Coloque seu nome" placeholder="Nome" required size="50" name="nome" autofocus> <!--autofocus= quando a pagina carrega automaticamente vai para esse campo 
+		title= quando passa o mouse no campo, aparece "coloque seu nome", uma ajuda para o usuário não ficar perdido
+		placeholder= dica exibida no campo (fica escrito no campo, não precisa apagar, quando começa digitar ele some)
+		required= Obrigatório
+		O atributo required funciona com os seguintes tipos de entrada: texto, pesquisa, url, tel, e-mail, senha, data pickers, número, caixa de seleção, rádio e arquivo.-->
+		
+		<br>
+		
+		Sobrenome: <br> 
+		<input type="text" title="Insira seu sobrenome" placeholder="Sobrenome" required size="20" name="sobrenome">  
+		<br>
+		<br>
+		
+		 Data de nascimento: <br> 
+  			<input type="date" title="Insira sua data de nascimento" name="data">
+  		<br>	
+  		<br>
+  		
+  		Código do país onde vive: <br>
+  		<input type="text" placeholder="País" name="codigo_pais" pattern="[A-Za-z]{3}" title="Insira 3 letras que correspondem o código de seu país">
+  		<!-- pattern= expecifica uma expressão do valor input, ou seja, ele verifica a expressao usada, que nesse caso foi ([A-Za-z]{3}), letras de a até z, tanto maiúscula como minúscula
+  		-->
+  		<br>
+  		<br>
+  		
+  		Data e tempo: <br>
+  		 	<input type="datetime-local" title="Insira uma data e um tempo" name="datatempo">
+  		<br>
+  		<br>
+  		
+ 		Mes e ano: <br>
+  		 	<input type="month" title="Insira um mês e um ano" name="mesano">
+  		<br>
+  		<br>
+  		
+  		E-mail: <br>
+  			<input type="email"  placeholder="E-mail" title="Insira seu e-mail" size="50" name="email">
+  		<br>
+  		<br>
+  		Selecione sua cor favorita: <br>
+  			<input type="color"  title="Selecione uma cor" name="cor" value="#ff0000">	
+		<br>
+		<br>
+		
+		Selecione as opções correspondentes: <br>
+  			<input type="checkbox" name="veiculo1" value="carro"> Tenho um carro <br>
+  			<input type="checkbox" name="veiculo2" value="moto"> Tenho uma moto
+		<br>
+		<br>
+		
+		
+  		Esportes que gosta: <br>
+   			<select name="Esportes">
+   				<optgroup label="Opções 1"> <!--o OPTGROUP cria uma descrição pra opções da lista -->
+    			<option value="futebolamericano">futebol americano </option>
+    			<option value="basquete">Basquete</option>
+    			</optgroup>
+    			<optgroup label="Opções 2">
+    			<option value="volei">Vôlei</option>
+    			<option value="futebol">Futebol</option>
+    			</optgroup>
+    			<option value="outro" selected>Outro</option>
+  		</select>
+  		<br>
+  		<br>
+  		
+  		Escreva sobre você:<br>
+  		 <textarea name="mensagem" rows="9" cols="70"> </textarea> <!-- rows= altura do form
+  		 			 											    cols= largura do form-->
+  		<br>
+		
+		Sexo: <br>
+		<input type="radio" name="opcao1" value="Masculino" checked> Masculino
+  	    <input type="radio" name="opcao2" value="feminino"> Feminino
+		<input type="radio" name="opcao3" value="outro"> Outro 
+    	<br> 
+	    <br>
+	    
+  			    
+	    Idade: 
+	    <br> 
+	    <input type="number"  placeholder="Idade" title="Insira sua idade" name="idade" value="idade">
+	    <br>
+	    <br>
+	    
+	    Quantos Mb tem sua internet: <br>
+  		0<input type="range" name="alavanca" min="0" max="300">300<!-- alavanca de valores (de 0 a 300)-->
+	    <br>
+	    <br>
+	    
+	    Peso (kg): <br>
+  		<input type="number" title="Insira seu peso" name="quantidade"
+   		min="0" max="200" step="10" value="30"> <!--min= minimo, max= maximo step= o valor que irá aumentar(de 10 em 10), value= o value é o valor que ficará escrito por padrão -->
+	    <br>
+	    <br>
+	    
+	    Selecione uma semana: <br>
+  		<input type="week"  title="Insira uma semana ou data" name="semana_ano">
+	    <br>
+	    <br>
+	    
+	    Coloque uma hora e minuto: <br>
+  		<input type="time"  title="Insira uma hora e um minuto" name="usr_time">
+	    <br>
+	    <br>
+	    
+	    Campo qualquer: <br> 
+		<input type="text" size="8"  title="Campo desativado" name="nome" value="Gabriel" disabled> <!-- disabled= campo desativado (não pode alterar nem adicionar nada)-->
+		<input type="text" size="8"  title="Campo pré-escrito" name="nome" value="Oliveira" readonly>  <!-- readonly= campo vem pré-escrito e nao pode ser alterado -->
+		<br>
+    	<br>
+	    
+	    Telefone:<br>
+  		<input type="tel" maxlength="10" placeholder="Telefone" title="Insira seu telefone" name="telefone"> <!-- maxlength= maximo de caracteres-->
+	    <br>
+	    <br>
+	    
+	    Envie um arquivo: <br>
+	   <input type="file" name="arquivo" multiple> <!-- Opção de selecionar um arquivo do seu computador
+	   -->
+	   <br>
+	   <br> 
+	    
+	 
+	    Insira uma nota para esse questionário(1 a 10): <br> <!--Campo de número com restrições (nesse caso é de 1 a 10) -->
+	    <input type="number"  title="Insira uma nota" name="quantidade" min="1" max="10">
+	    <br>
+	    <br>
+	    
+	    <input type="reset" value="Limpar"> <!-- reset= limpar os campos-->
+	    <input type="submit" onclick="alert('Enviado com sucesso!')" value="Enviar"> <!-- o onclick alert = quando clicar no botao, aparece esse alerta(mensagem) -->
+	    <input type="submit" formtarget="_blank" value="Enviar_novajanela">  <!--formtarget="_blank"= redireciona o botao enviar a outra pagina -->
+	    <input type="image" src="img_submit.gif" onclick="alert('Enviado com sucesso!')" alt="Submit" width="38" height="38"> <!--Botão com imagem, definindo o diretório, largura e altura, e coloquei um alerta (opcional) --> <!-- o diretório da imagem é só mudar-->
+	    
+	    
+	</fieldset>
+	
+	<br>
+	
+	<form> 
+	   <fieldset>
+	   Procurar no google: <br>
+  		<input type="search"  title="Insira qualquer palavra" name="buscagoogle">
+  		<input type="submit" onclick="alert('Enviado com sucesso!')" value="Enviar"> 
+	    <!-- o onclick alert = quando clicar no botao, aparece esse alerta(mensagem) -->
+	  </fieldset>
+	</form>      
+	
+	<form>
+  		<fieldset>
+  		<legend> Formulário de usuario </legend>
+  		Usuário:<br>
+  		<input type="text"  title="Insira seu nome de usuário" name="usuario"><br>
+  		Senha:<br>
+  		<input type="password"  title="Insira sua senha" name="senha">
+  		<br>
+  		<br>
+  		<input type="reset" value="Limpar"> <!-- reset= limpar os campos-->
+  		<input type="submit" onclick="alert('Enviado com sucesso!')" value="Enviar"> 
+	    <!-- o onclick alert = quando clicar no botao, aparece esse alerta(mensagem) -->
+	    <!--  <input type="submit" formmethod="post" formaction="/action_page_post.php" 
+	    (para aplicar em outro botao enviar do mesmo form outro arquivo php, ou outro médtodo de envio)-->
+	    <!-- <input type="submit" formnovalidate value="Submit without validation"> inclui ao form não precisar de validação, no botao de enviar -->
+	    
+  	</fieldset>
+</form>
+	
+	<form action="/action_page.php" method="get" novalidate>
+		<fieldset>
+			<legend>Campo que nao precisa ser validado</legend>
+			campo que nao precisa ser validado: <br>
+			<input type="email"  size="50" name="email" formnovalidate>
+			<br>
+			<br>
+		</fieldset>
+	</form>
+		
+</form> 
+
+
+</body>
+</html>
